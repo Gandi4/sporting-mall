@@ -2,7 +2,7 @@
 
 > 基于 Spring Boot + Vue 3 的前后端分离体育用品电商系统，本科毕业设计作品。
 > 仓库内的论文、截图和演示视频已完成个人信息脱敏，代码中的 DeepSeek 密钥已移除。
-> 教学视频约 4.49GB，未放入主仓库，版本与目录见 [docs/tools.md](docs/tools.md)。
+> 教学视频约 4.49GB，未放入主仓库，AI时代让AI自己学习。
 
 ![Java](https://img.shields.io/badge/Java-17-007396?logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.0.0-6DB33F?logo=springboot&logoColor=white)
