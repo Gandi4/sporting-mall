@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.sporting.mapper.VipOrderMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.sporting.entity.VipOrder">
+            <id property="id" column="id" />
+            <result property="userId" column="user_id" />
+            <result property="orderNo" column="order_no" />
+            <result property="amount" column="amount" />
+            <result property="months" column="months" />
+            <result property="status" column="status" />
+            <result property="createdAt" column="created_at" />
+            <result property="payTime" column="pay_time" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,user_id,order_no,amount,months,status,
+        created_at,pay_time
+    </sql>
+</mapper>

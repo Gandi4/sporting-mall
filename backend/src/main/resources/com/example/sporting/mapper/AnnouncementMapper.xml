@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.sporting.mapper.AnnouncementMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.sporting.entity.Announcement">
+            <id property="id" column="id" />
+            <result property="title" column="title" />
+            <result property="content" column="content" />
+            <result property="publishAt" column="publish_at" />
+            <result property="status" column="status" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,title,content,publish_at,status
+    </sql>
+</mapper>

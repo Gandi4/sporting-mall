@@ -1,0 +1,65 @@
+server:
+  port: ${SERVER_PORT:80}
+
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/sporting_db?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useSSL=false}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:123456}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+    # 使用 Druid 连接池
+    type: com.alibaba.druid.pool.DruidDataSource
+
+    druid:
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      filters: stat,wall,slf4j
+
+      # 监控页默认关闭，需要时把 DRUID_STAT_ENABLED 设为 true
+      stat-view-servlet:
+        enabled: ${DRUID_STAT_ENABLED:false}
+        url-pattern: /druid/*
+        login-username: ${DRUID_USERNAME:admin}
+        login-password: ${DRUID_PASSWORD:change-me}
+        reset-enable: false
+        allow: ""
+
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+logging:
+  level:
+    root: info
+
+mybatis-plus:
+  configuration:
+    auto-mapping-behavior: full
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+  type-aliases-package: com.example.sporting.entity
+  mapper-locations: classpath*:mapper/**/*.xml
+
+# DeepSeek 智能客服配置
+# 不要把真实密钥写进仓库；运行时通过环境变量 DEEPSEEK_API_KEY 注入。
+deepseek:
+  api-key: ${DEEPSEEK_API_KEY:}
+  api-url: ${DEEPSEEK_API_URL:https://api.deepseek.com/chat/completions}
+  model: ${DEEPSEEK_MODEL:deepseek-chat}
