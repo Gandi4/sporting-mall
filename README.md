@@ -8,6 +8,7 @@
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.0.0-6DB33F?logo=springboot&logoColor=white)
 ![Vue](https://img.shields.io/badge/Vue-3.5-4FC08D?logo=vuedotjs&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-8.4-4479A1?logo=mysql&logoColor=white)
+![DeepSeek](https://img.shields.io/badge/DeepSeek-API-4D6BFE?logo=deepseek&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## 项目简介
